@@ -1,0 +1,41 @@
+.round_wrapper {
+  .round {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #E0DFE1;
+    position: relative;
+
+    &:hover {
+      background: #EEEDEF;
+    }
+
+    &_title {
+      width: 30%;
+      text-align: center;
+    }
+
+    &_date {
+      width: 70%;
+      text-align: center;
+    }
+
+    &_reload {
+      width: 18px;
+      height: 18px;
+      position: absolute;
+      right: 10px;
+    }
+  }
+
+  .game {
+    width: 100%;
+    height: 250px;
+    background: #EEEDEF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

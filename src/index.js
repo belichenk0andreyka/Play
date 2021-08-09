@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import Rounds from "./components/Rounds";
+
 import './index.less';
 
 const App = () => {
     return (
-        <div>
-            App
+        <div className='app'>
+            <Rounds />
         </div>
     );
 }
