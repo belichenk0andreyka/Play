@@ -1,22 +1,17 @@
 import * as React from 'react';
 
-import RoundItem from "../RoundItem";
+import RoundItem from '../RoundItem';
 
 import './Rounds.less';
 
 const Rounds = () => {
-    const [state, setState] = React.useState({
-        rounds: [],
-        isLoading: false,
-    });
-    React.useEffect(() => {
-        setState(prev => ({...prev, isLoading: true}));
-        fetch('https://60f7b35b9cdca00017454f5e.mockapi.io/api/v1/rounds')
-            .then((response) => response.json())
-            .then((rounds) => setState({rounds, isLoading: false}));
+    const [rounds, setRounds] = React.useState([]);
+    React.useEffect(async () => {
+        const request = await fetch('https://60f7b35b9cdca00017454f5e.mockapi.io/api/v1/rounds');
+        const rounds = await request.json();
+        setRounds(rounds);
     }, []);
 
-    const { rounds } = state;
     return (
         <div className='rounds'>
             <h1 className='rounds_title'>List</h1>
@@ -25,7 +20,7 @@ const Rounds = () => {
                     <div className='header_title'><p>Rounds</p></div>
                     <div className='header_date'><p>Date</p></div>
                 </div>
-                {rounds.map(round => <RoundItem round={round} />)}
+                {rounds.map(round => <RoundItem round={round} key={round.roundId} />)}
             </div>
         </div>
     );

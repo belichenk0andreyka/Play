@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Rounds from "./components/Rounds";
+import Rounds from './components/Rounds';
 
 import './index.less';
 
